@@ -1,7 +1,9 @@
 const cartArray = [];
 function addToCart ( e ) {
-    const productName = e.parentNode.parentNode.children[0].innerText;
-    const productPrice = e.parentNode.parentNode.children[1].children[0].innerText;
+    const productName = e.parentNode.parentNode.parentNode.children[1].children[0].innerText;
+    const productPrice = e.parentNode.parentNode.parentNode.children[ 1 ].children[ 1 ].children[0].innerText;
+    // const productImage = e.parentNode.parentNode.parentNode.children[ 0 ].children.src;
+    // console.log(productName, productPrice,productImage);
 
     const productObj = {
       productName: productName,
