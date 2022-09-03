@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Daisy UI CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title>Shopping with JS</title>
+  </head>
+  <body>
+    <!-- Header Section Design -->
+    <header class="w-10/12 mx-auto">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li tabindex="0">
+                <a class="justify-between">
+                  Parent
+                  <svg
+                    class="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+                    />
+                  </svg>
+                </a>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost normal-case text-xl">Digital Shop</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal p-0">
+            <li><a>Home</a></li>
+            <li><a>About Us</a></li>
+            <li><a>Shop</a></li>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="btn">Sign up</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Section Design -->
+
+    <main class="w-10/12 mx-auto m-16">
+      <div class="grid grid-cols-2 divide-x gap-10">
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Card 1 start -->
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-6 pt-6">
+              <img src="./images/car.jpg" alt="car" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-start">
+              <h2 class="card-title">Porche Sport Car</h2>
+              <p>Price : $<span id="product-price">100</span></p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 start -->
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-6 pt-6">
+              <img src="./images/coffee.jpg" alt="coffee" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-start">
+              <h2 class="card-title">Black Coffee</h2>
+              <p>Price : $<span id="product-price">80</span></p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 start -->
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-6 pt-6">
+              <img
+                src="./images/javascript.jpg"
+                alt="coffee"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-start">
+              <h2 class="card-title">Advance Javascript</h2>
+              <p>Price : $<span id="product-price">150</span></p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 start -->
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-6 pt-6">
+              <img
+                src="./images/umbrella.jpg"
+                alt="coffee"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-start">
+              <h2 class="card-title">Rainy Umbrella</h2>
+              <p>Price : $<span id="product-price">50</span></p>
+              <div class="card-actions items-end">
+                <button class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pl-10">
+          <div class="overflow-x-auto">
+            <h2 class="font-bold text-2xl text-center mb-6">
+              Shopping Cart - Items :
+              <span id="cart" class="text-red-600">0</span>
+            </h2>
+            <table class="table w-full">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Favorite Color</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <th>1</th>
+                  <td>Cy Ganderton</td>
+                  <td>Quality Control Specialist</td>
+                  <td>Blue</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                  <th>2</th>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                  <td>Purple</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                  <th>3</th>
+                  <td>Brice Swyre</td>
+                  <td>Tax Accountant</td>
+                  <td>Red</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Js File Link -->
+    <script src="./js/shopping.js"></script>
+  </body>
+</html>
